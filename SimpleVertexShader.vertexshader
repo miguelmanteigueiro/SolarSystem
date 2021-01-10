@@ -1,0 +1,16 @@
+#version 330 core
+
+// Input vertex data and color data
+layout(location = 0) in vec3 vertexPosition; 
+layout(location = 1) in vec2 vertexColor;
+
+// Output fragment data
+out vec2 fragmentColor;
+
+void main() {
+	// position of each vertex in homogeneous coordinates
+	gl_Position.xyz = vertexPosition; gl_Position.w = 1.0;
+
+	// the vertex shader just passes the color to fragment shader
+	fragmentColor = vertexColor; 
+}
